@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAG - Fullylife Solutions</title>
+  <title>PAG Lite - Fullylife Solutions</title>
 <!-- PWA Manifest -->
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#f5a623">
@@ -124,22 +124,18 @@
 
   <div class="brand">
     <a href="https://www.fullylife.solutions" target="_blank">FULLYLIFE SOLUTIONS</a>
-    <div class="subtitle">Profilo di Appartenenza al Gruppo</div>
+    <div class="subtitle">Profilo di Appartenenza - Versione Lite</div>
   </div>
 
   <div class="menu-container">
-    <h1>Seleziona Modalità</h1>
+    <h1>Profilo di Appartenenza al Gruppo</h1>
+    <p style="text-align: center; color: #f5a623; font-size: 16px; margin-top: 10px;">Versione Utente</p>
     
-    <div class="menu-buttons">
+    <div class="menu-buttons" style="justify-content: center;">
       <a href="utente.html" class="menu-btn user">
         <span class="icon">👤</span>
-        <span>Utente</span>
+        <span>Inizia</span>
       </a>
-      
-      <button class="menu-btn consultant" onclick="showConsultantModal()">
-        <span class="icon">👨‍💼</span>
-        <span>Consulente</span>
-      </button>
     </div>
     
     <div style="text-align: center; margin-top: 30px;">
@@ -165,59 +161,10 @@
     </div>
   </div>
 
-  <div class="modal" id="consultantModal">
-    <div class="modal-content">
-      <h2>🔐 Accesso Consulente</h2>
-      <p style="text-align: center; opacity: 0.8; margin-bottom: 20px;">
-        Inserisci il codice di accesso
-      </p>
-      <input type="password" id="consultantCode" placeholder="Codice consulente">
-      <div class="error-message" id="errorMessage">❌ Codice non valido</div>
-      <div class="modal-buttons">
-        <button class="modal-btn cancel" onclick="closeConsultantModal()">Annulla</button>
-        <button class="modal-btn confirm" onclick="checkConsultantCode()">Accedi</button>
-      </div>
-    </div>
-  </div>
+  <!-- Modal consulente rimosso - PAG Lite -->
 
   <script>
-    const CONSULTANT_CODE = 'FULLYLIFE2026';
-    
-    function showConsultantModal() {
-      const savedCode = localStorage.getItem('consultantAccess');
-      if (savedCode === CONSULTANT_CODE) {
-        window.location.href = 'consulente.html';
-      } else {
-        document.getElementById('consultantModal').classList.add('show');
-        document.getElementById('consultantCode').focus();
-      }
-    }
-    
-    function closeConsultantModal() {
-      document.getElementById('consultantModal').classList.remove('show');
-      document.getElementById('consultantCode').value = '';
-      document.getElementById('errorMessage').classList.remove('show');
-    }
-    
-    function checkConsultantCode() {
-      const code = document.getElementById('consultantCode').value;
-      if (code === CONSULTANT_CODE) {
-        localStorage.setItem('consultantAccess', code);
-        window.location.href = 'consulente.html';
-      } else {
-        document.getElementById('errorMessage').classList.add('show');
-        document.getElementById('consultantCode').value = '';
-        setTimeout(() => {
-          document.getElementById('errorMessage').classList.remove('show');
-        }, 3000);
-      }
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('consultantCode').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') checkConsultantCode();
-      });
-    });
+    // Script consulente rimosso - PAG Lite
   </script>
 
 <!-- Service Worker Registration -->
